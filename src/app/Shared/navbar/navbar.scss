@@ -11,8 +11,8 @@
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
     position: fixed;
@@ -30,16 +30,18 @@
     .logoContainer {
         display: flex;
         flex-direction: row;
+        margin-right: auto;
     }
 
     .logoContainer .logo img {
         border-radius: 30%;
+        margin-top: 7px;
     }
 
     .logoContainer .logotext {
         display: flex;
         flex-direction: column;
-        margin-left: 6px;
+        margin-left: 15px;
     }
 
     .logoContainer .logotext .toolbar-logoTop {
@@ -47,6 +49,7 @@
         font-weight: 600;
         font-size: 1.25rem;
         line-height: 1.75rem;
+       
     }
 
     .logoContainer .logotext .toolbar-logoButton {
@@ -58,9 +61,9 @@
 
     .navLeft {
         display: flex;
-        flex-wrap: nowrap;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
+        
     }
 
     .navLeft .notification {
@@ -70,6 +73,12 @@
         padding: 3px;
         transition: border-radius 1s;
         cursor: pointer;
+         width: 100%;
+         text-align: center;
+         
+    justify-content: center;
+    align-items: center;
+
     }
 
     .navLeft .notification:hover {
@@ -82,24 +91,41 @@
     // .navLeft .profile {
     //     margin-left: 4px;
     // }
+  .navLeft .profile{
+        font-size: 24px;
+        margin-right: auto;
+        border-radius: 3rem;
+        padding: 3px;
+        transition: border-radius 1s;
+        cursor: pointer;
+        width: 100%;
+    justify-content: center;
 
+    align-items: center;
+
+    }
+  
     .navLeft .profile mat-icon {
         font-size: 24px;
         background-color: hsl(220 80% 15%);
         color: white;
-        border-radius: 2rem;
-        padding: 0px;
-        transition: border-radius 0.5s;
-        cursor: pointer;
+        border-radius: 3rem;
+        padding: 3px;
+          cursor: pointer;
+           outline: 0px solid hsl(220 80% 15%);;
+        text-align: center;
+        transition: outline 0.3s;
+      
     }
 
     .navLeft .profile mat-icon:hover {
-        font-size: 20px;
+        font-size: 24px;
         background-color: hsl(220 80% 15%);
         color: white;
         border-radius: 3rem;
         padding: 3px;
         cursor: pointer;
+        outline: 3px solid hsl(220 80% 15%);;
     }
 }
 

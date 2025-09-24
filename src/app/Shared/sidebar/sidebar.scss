@@ -27,3 +27,12 @@ mat-list-item{
   object-fit: cover;
 //   background-image: rgb(16, 8, 90);
 }
+::ng-deep .mat-expansion-panel {
+  background-color: white;
+  box-shadow: none !important;  
+  border: none !important;      
+}
+
+::ng-deep .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header {
+  border-bottom: none !important; 
+}
