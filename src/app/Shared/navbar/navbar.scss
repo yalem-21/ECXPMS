@@ -1,0 +1,115 @@
+.mat-toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    -webkit-tap-highlight-color: transparent;
+    background-color: hsl(0, 0%, 98%);
+    box-sizing: border-box;
+    border-width: 0;
+    color: hsl(222.2 84% 4.9%);
+    border: 2px solid hsl(220 13% 91%);
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+
+    button {
+        border: none;
+        background-color: hsl(0, 0%, 98%);
+        color: hsl(222.2 84% 4.9%);
+    }
+
+    .logoContainer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .logoContainer .logo img {
+        border-radius: 30%;
+    }
+
+    .logoContainer .logotext {
+        display: flex;
+        flex-direction: column;
+        margin-left: 6px;
+    }
+
+    .logoContainer .logotext .toolbar-logoTop {
+        color: hsl(222.2 84% 4.9%);
+        font-weight: 600;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .logoContainer .logotext .toolbar-logoButton {
+        color: hsl(215.4 16.3% 46.9%);
+        font-size: .875rem;
+        line-height: 1.25rem;
+    }
+
+
+    .navLeft {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .navLeft .notification {
+        font-size: 24px;
+        margin-right: 10px;
+        border-radius: 3rem;
+        padding: 3px;
+        transition: border-radius 1s;
+        cursor: pointer;
+    }
+
+    .navLeft .notification:hover {
+        background-color: hsl(220 80% 15%);
+        font-size: 24px;
+        color: white;
+        border-radius: 5rem;
+    }
+
+    // .navLeft .profile {
+    //     margin-left: 4px;
+    // }
+
+    .navLeft .profile mat-icon {
+        font-size: 24px;
+        background-color: hsl(220 80% 15%);
+        color: white;
+        border-radius: 2rem;
+        padding: 0px;
+        transition: border-radius 0.5s;
+        cursor: pointer;
+    }
+
+    .navLeft .profile mat-icon:hover {
+        font-size: 20px;
+        background-color: hsl(220 80% 15%);
+        color: white;
+        border-radius: 3rem;
+        padding: 3px;
+        cursor: pointer;
+    }
+}
+
+.profilebtn {
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.profilebtn:hover {
+    background-color: hsl(220 80% 15%);
+    color: white;
+}

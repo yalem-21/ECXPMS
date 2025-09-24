@@ -1,0 +1,42 @@
+<mat-toolbar color="primary" class="mat-elevation-z4">
+  <div class="logoContainer">
+    <div class="logo">
+      <img src="assets/ECXLogo.jpg" alt="Logo" class="toolbar-logo" width="50px" height="40px" />
+    </div>
+    <div class="logotext">
+      <span class="toolbar-logoTop">ECX Property Management</span>
+      <span class="toolbar-logoButton">Ethiopia Commodity
+        Exchange</span>
+    </div>
+  </div>
+  <!-- <button mat-icon-button class="mobile-menu-button">
+    <mat-icon style="color: white;">menu</mat-icon>
+  </button> -->
+  <span class="spacer"></span>
+  <div class="navLeft">
+    <button class="notification" mat-button> <mat-icon matBadgeColor="warn"
+        [matBadge]="notificationCount">notifications</mat-icon></button>
+    <button  mat-button class="profile"
+      [matMenuTriggerFor]="profileMenu">
+      <div style="display: flex;flex-direction: column;">
+        <mat-icon>person</mat-icon>
+      </div>
+    </button>
+    <mat-menu #profileMenu="matMenu" [overlapTrigger]="false" yposition="below" xposition="before">
+      <div style="padding: 5px;padding: 10px; background-color: white;" class="profileTop" (click)="$event.stopPropagation()">
+        <p style="margin: 0; font-size: 15px; font-weight:500;color:hsl(222.2 84% 4.9%);">Property Admin</p>
+        <div style="margin-top: 6px; font-size: 14px; opacity: 0.9;color: hsl(215.4 16.3% 46.9%)">
+          yzy@gmail.com
+        </div>
+        <mat-divider></mat-divider>
+        <div style="margin-top: 16px; display: flex; justify-content: space-between;">
+          <button style="border: none;display: flex;flex-direction: row;justify-content: space-between;"
+            class="profilebtn">
+            <mat-icon style="font-size: 16px;">logout</mat-icon> Log out
+          </button>
+        </div>
+      </div>
+    </mat-menu>
+
+  </div>
+</mat-toolbar>

@@ -1,0 +1,29 @@
+.sidebar{
+    border-radius: 0;
+}
+
+mat-list-item{
+  background-color:#eaf1ec;
+  border-color: black;
+  border-radius: 10px;
+  margin-top: 10px;
+  border-color: aliceblue;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 100px; 
+  height: 100px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 15px;
+//   border-radius: 50%; 
+  object-fit: cover;
+//   background-image: rgb(16, 8, 90);
+}
