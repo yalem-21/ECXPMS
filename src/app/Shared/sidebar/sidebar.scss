@@ -1,9 +1,9 @@
-.sidebar{
-    border-radius: 0;
+.sidebar {
+  border-radius: 0;
 }
 
-mat-list-item{
-  background-color:#eaf1ec;
+mat-list-item {
+  background-color: #eaf1ec;
   border-color: black;
   border-radius: 10px;
   margin-top: 10px;
@@ -12,27 +12,78 @@ mat-list-item{
 
 .logo-container {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   margin-bottom: 20px;
 }
 
 .logo {
-  width: 100px; 
+  width: 100px;
   height: 100px;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 15px;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 15px;
-//   border-radius: 50%; 
+  //   border-radius: 50%; 
   object-fit: cover;
-//   background-image: rgb(16, 8, 90);
+  //   background-image: rgb(16, 8, 90);
 }
+
 ::ng-deep .mat-expansion-panel {
   background-color: white;
-  box-shadow: none !important;  
-  border: none !important;      
+  box-shadow: none !important;
+  border: none !important;
 }
 
 ::ng-deep .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header {
-  border-bottom: none !important; 
+  border-bottom: none !important;
+}
+
+div {
+  mat-accordion {
+    div {
+      .sidebarButton {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        border: none;
+        background-color: white;
+        padding: 13px 30px 13px 24px;
+        font-weight: bold;
+        color: #44474e;
+        width: 100%;
+        cursor: pointer;
+        font-size: 16px;
+        align-items: center;
+        
+      }
+
+      .sidebarButton:hover {
+        background-color: hsl(220 13% 91%);
+        width: 100%;
+      }
+
+      .sidebarButtonSubcatagory {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        border: none;
+        background-color: white;
+        padding: 13px 30px 13px 24px;
+        font-weight: bold;
+        color: #44474e;
+        width: 100%;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .sidebarButtonSubcatagory:hover {
+        background-color: hsl(220 13% 91%);
+        width: 100%;
+      }
+    }
+  }
+  mat-icon{
+    margin-right: 6px;
+  }
 }

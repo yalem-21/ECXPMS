@@ -22,9 +22,12 @@ export class Sidebar {
   readonly panelOpenState = signal(false);
   @Input() selectedModule: string = '';
   @Output() toggleSidebar = new EventEmitter<void>();
+tabMeny: string[]=['Master Data ', 'Property Management', 'Requests', 'Inspection','Transfer','Disposal','Report','User','Setting','help']
 
-
-
+masterData:string[]=['Property Type',' Catagory','Location','Safty Box'];
+propertyManagment:string[]=['Property Registration','Property Recieving','Property Issueing','Property Return'];
+Request:string[]=['Purchase Request', 'Store Requesition'];
+Report:string[]=['Property report', 'Financial Report', 'Compliance Report'];
 
   
   get subModules(): string[] {

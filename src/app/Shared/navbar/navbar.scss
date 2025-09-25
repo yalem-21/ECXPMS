@@ -27,105 +27,100 @@
         color: hsl(222.2 84% 4.9%);
     }
 
+
+
     .logoContainer {
         display: flex;
         flex-direction: row;
         margin-right: auto;
+
+        .logo {
+            img {
+                border-radius: 30%;
+                margin-top: 7px;
+            }
+        }
+
+        .logotext {
+            display: flex;
+            flex-direction: column;
+            margin-left: 15px;
+
+            .toolbar-logoTop {
+                color: hsl(222.2 84% 4.9%);
+                font-weight: 600;
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+
+            }
+
+            .toolbar-logoButton {
+                color: hsl(215.4 16.3% 46.9%);
+                font-size: .875rem;
+                line-height: 1.25rem;
+            }
+
+        }
     }
 
-    .logoContainer .logo img {
-        border-radius: 30%;
-        margin-top: 7px;
-    }
-
-    .logoContainer .logotext {
-        display: flex;
-        flex-direction: column;
-        margin-left: 15px;
-    }
-
-    .logoContainer .logotext .toolbar-logoTop {
-        color: hsl(222.2 84% 4.9%);
-        font-weight: 600;
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-       
-    }
-
-    .logoContainer .logotext .toolbar-logoButton {
-        color: hsl(215.4 16.3% 46.9%);
-        font-size: .875rem;
-        line-height: 1.25rem;
-    }
 
 
     .navLeft {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        
-    }
 
-    .navLeft .notification {
-        font-size: 24px;
-        margin-right: 10px;
-        border-radius: 3rem;
-        padding: 3px;
-        transition: border-radius 1s;
-        cursor: pointer;
-         width: 100%;
-         text-align: center;
-         
-    justify-content: center;
-    align-items: center;
+        .notification {
+            font-size: 24px;
+            margin-right: 10px;
+            padding: 3px;
+            border-radius: 1px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
 
-    }
+        }
 
-    .navLeft .notification:hover {
-        background-color: hsl(220 80% 15%);
-        font-size: 24px;
-        color: white;
-        border-radius: 5rem;
-    }
+        .notification:hover {
+            background-color: #18552c;
+            font-size: 24px;
+            color: white;
+            border-radius: 5px;
+           
 
-    // .navLeft .profile {
-    //     margin-left: 4px;
-    // }
-  .navLeft .profile{
-        font-size: 24px;
-        margin-right: auto;
-        border-radius: 3rem;
-        padding: 3px;
-        transition: border-radius 1s;
-        cursor: pointer;
-        width: 100%;
-    justify-content: center;
+        }
 
-    align-items: center;
+        .profile {
+            font-size: 24px;
+            margin-right: auto;
+            border-radius: 3rem;
+            padding: 3px;
+            transition: border-radius 1s;
+            cursor: pointer;
+            width: 100%;
+            justify-content: center;
 
-    }
-  
-    .navLeft .profile mat-icon {
-        font-size: 24px;
-        background-color: hsl(220 80% 15%);
-        color: white;
-        border-radius: 3rem;
-        padding: 3px;
-          cursor: pointer;
-           outline: 0px solid hsl(220 80% 15%);;
-        text-align: center;
-        transition: outline 0.3s;
-      
-    }
+            align-items: center;
 
-    .navLeft .profile mat-icon:hover {
-        font-size: 24px;
-        background-color: hsl(220 80% 15%);
-        color: white;
-        border-radius: 3rem;
-        padding: 3px;
-        cursor: pointer;
-        outline: 3px solid hsl(220 80% 15%);;
+            mat-icon {
+                font-size: 24px;
+                background-color: #18552c;
+                color: white;
+                border-radius: 3rem;
+                padding: 3px;
+                cursor: pointer;
+                outline: 0px solid #18552c;
+                text-align: center;
+                transition: outline 0.3s;
+
+            }
+
+            mat-icon:hover {
+                outline: 3px solid #18552c;
+            }
+        }
     }
 }
 

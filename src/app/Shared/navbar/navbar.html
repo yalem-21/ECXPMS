@@ -15,11 +15,9 @@
   <span class="spacer"></span>
   <div class="navLeft">
     <button class="notification" mat-button> <mat-icon matBadgeColor="warn"
-        [matBadge]="notificationCount">notifications</mat-icon></button>
+        [matBadge]="notificationCount" aria-hidden="false">notifications</mat-icon></button>
     <button mat-button class="profile" [matMenuTriggerFor]="profileMenu">
-
       <mat-icon>person</mat-icon>
-
     </button>
     <mat-menu #profileMenu="matMenu" [overlapTrigger]="false" yposition="below" xposition="before">
       <div style="padding: 5px;padding: 10px; background-color: white;border: none;" class="profileTop"

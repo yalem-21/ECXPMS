@@ -1,96 +1,65 @@
 <p style="text-align: center;font-weight: bold;">ECXPMS Menu</p>
 <mat-divider></mat-divider>
-<div style="display: flex;flex-direction: column;height: 90vh; overflow-y: auto;  scrollbar-width: thin;               /* Firefox */
-  scrollbar-color: hsl(220 13% 91%) hsl(220 13% 171%);">
-    <button
-        style="padding: 10px; border: none;cursor: pointer;margin: 15px;background-color: hsl(220 80% 15%);color: white;border-radius: 10PX;">Dashboared</button>
-    <mat-accordion style="background-color: white;border: none;">
+<div style="display: flex;flex-direction: column;height: 100vh; overflow-y: auto;  scrollbar-width: thin;
+scrollbar-color: hsl(220 13% 91%) hsl(220 13% 171%);">
+    <mat-accordion style="background-color: white;border: none;padding-bottom: 150px;">
+        <div>
+            <button class="sidebarButton" style="background-color: #18552c;color: white;">
+                <mat-icon>space_dashboard</mat-icon>
+                Dashboared
+            </button>
+
+        </div>
         <mat-expansion-panel style="background-color: white;">
             <mat-expansion-panel-header>
-                <mat-panel-description> This is a summary of the content </mat-panel-description>
+                <mat-panel-description><mat-icon>folder</mat-icon> Master Data </mat-panel-description>
             </mat-expansion-panel-header>
-            <p>This is the primary content of the panel.</p>
+            <div *ngFor="let master of masterData" style="display: flex;flex-direction: column;">
+                <button class="sidebarButtonSubcatagory">{{master}}</button>
+            </div>
         </mat-expansion-panel>
         <mat-expansion-panel style="background-color: white;">
             <mat-expansion-panel-header>
                 <mat-panel-description>
-                    Currently I am {{panelOpenState() ? 'open' : 'closed'}}
+                    <mat-icon>business</mat-icon> Property Management
                 </mat-panel-description>
             </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
+            <div *ngFor="let propertyManagments of propertyManagment" style="display: flex;flex-direction: column;">
+                <button class="sidebarButtonSubcatagory">{{propertyManagments}}</button>
+            </div>
         </mat-expansion-panel>
-           <mat-expansion-panel style="background-color: white;">
+        <mat-expansion-panel style="background-color: white;">
             <mat-expansion-panel-header>
                 <mat-panel-description>
-                    Currently I am {{panelOpenState() ? 'open' : 'closed'}}
+                    <mat-icon>pending_actions</mat-icon> Request
                 </mat-panel-description>
             </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
+            <div *ngFor="let Requests of Request" style="display: flex;flex-direction: column;width: 100%;">
+                <button class="sidebarButtonSubcatagory">{{Requests}}</button>
+            </div>
         </mat-expansion-panel>
-           <mat-expansion-panel style="background-color: white;">
+        <div> <Button class="sidebarButton"><mat-icon>fact_check</mat-icon> Inspection</Button></div>
+        <div> <button class="sidebarButton"><mat-icon>sync_alt</mat-icon> Transfer</button></div>
+        <div><button class="sidebarButton"><mat-icon>recycling</mat-icon> Disposal</button></div>
+        <mat-expansion-panel style="background-color: white;">
             <mat-expansion-panel-header>
                 <mat-panel-description>
-                    Currently I am {{panelOpenState() ? 'open' : 'closed'}}
+                    <mat-icon>report</mat-icon> Report
                 </mat-panel-description>
             </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
+            <div *ngFor="let Reports of Report" style="display: flex;flex-direction: column;">
+                <button class="sidebarButtonSubcatagory">{{Reports}}</button>
+            </div>
         </mat-expansion-panel>
-           <mat-expansion-panel style="background-color: white;">
-            <mat-expansion-panel-header>
-                <mat-panel-description>
-                    Currently I am {{panelOpenState() ? 'open' : 'closed'}}
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
-        </mat-expansion-panel>
-           <mat-expansion-panel style="background-color: white;">
-            <mat-expansion-panel-header>
-                <mat-panel-description>
-                    Currently I am {{panelOpenState() ? 'open' : 'closed'}}
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
-        </mat-expansion-panel>
-           <mat-expansion-panel style="background-color: white;">
-            <mat-expansion-panel-header>
-                <mat-panel-description>
-                    Currently I am {{panelOpenState() ? 'open' : 'closed'}}
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
-        </mat-expansion-panel>
-           <mat-expansion-panel style="background-color: white;">
-            <mat-expansion-panel-header>
-                <mat-panel-description>
-                    Currently I am {{panelOpenState() ? 'open' : 'closed'}}
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
-        </mat-expansion-panel>
-           <mat-expansion-panel style="background-color: white;">
-            <mat-expansion-panel-header>
-                <mat-panel-description>
-                    Currently I am {{panelOpenState() ? 'open' : 'closed'}}
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
-        </mat-expansion-panel>
-           <mat-expansion-panel style="background-color: white;">
-            <mat-expansion-panel-header>
-                <mat-panel-description>
-                    Currently I am {{panelOpenState() ? 'open' : 'closed'}}
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
-        </mat-expansion-panel>
-           <mat-expansion-panel style="background-color: white;">
-            <mat-expansion-panel-header>
-                <mat-panel-description>
-                    Currently I am {{panelOpenState() ? 'open' : 'closed'}}
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
-        </mat-expansion-panel>
+        <div>
+            <button class="sidebarButton"><mat-icon>person</mat-icon>User</button>
+        </div>
+        <div>
+            <button class="sidebarButton"><mat-icon>settings</mat-icon>Setting</button>
+        </div>
+        <div>
+            <button class="sidebarButton"><mat-icon>help</mat-icon>Help</button>
+        </div>
     </mat-accordion>
-   
+
 </div>
