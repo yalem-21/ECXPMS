@@ -15,23 +15,33 @@ import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   imports: [
-        RouterOutlet,
-        HttpClientModule,
-        Navbar,
-        Sidebar,
-        MatSidenavModule,
-
-       
-  ],
+    RouterOutlet,
+    Navbar,
+    Sidebar,
+    MatSidenavModule,
+    MatIconModule,
+    CommonModule
+],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
   protected readonly title = signal('EcxPMSUI');
   selectedModule: string = '';
-
+  sidebarToggle:boolean=true;
+  SidebarToggleIcon:string='chevron_left';
   onModuleSelected(module: string, sidenav: MatSidenav): void {
     this.selectedModule = module;
     sidenav.open();
+  }
+  sidebarToggled(){
+    this.sidebarToggle=!this.sidebarToggle;
+    console.log(this.sidebarToggle);
+    if(this.SidebarToggleIcon=='chevron_left'){
+      this.SidebarToggleIcon='chevron_right';
+    }
+    else{
+      this.SidebarToggleIcon='chevron_left';
+    }
   }
 }

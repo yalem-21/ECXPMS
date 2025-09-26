@@ -54,7 +54,7 @@ div {
         cursor: pointer;
         font-size: 16px;
         align-items: center;
-        
+
       }
 
       .sidebarButton:hover {
@@ -65,16 +65,16 @@ div {
       .sidebarButtonSubcatagory {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         flex-wrap: nowrap;
         border: none;
         background-color: white;
-        padding: 13px 30px 13px 24px;
+        padding: 13px 30px 13px 5px;
         font-weight: bold;
         color: #44474e;
         width: 100%;
         cursor: pointer;
         font-size: 14px;
+        align-items: center;
       }
 
       .sidebarButtonSubcatagory:hover {
@@ -83,7 +83,66 @@ div {
       }
     }
   }
-  mat-icon{
+
+  mat-icon {
     margin-right: 6px;
+
   }
+}
+
+mat-icon {
+  font-size: 13px;
+}
+
+
+
+
+.sidebarToggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+
+  button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    mat-icon {
+      font-size: 20px;
+    }
+  }
+  .master,
+  .business,
+  .Request,
+  .report {
+    position: relative;
+  }
+
+  button:hover {
+    background-color: hsl(220, 13%, 91%);
+    width: 100%;
+  }
+}
+
+
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 100%;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  min-width: 150px;
+  padding: 5px 0;
+}
+
+
+.sidebarToggle.master:hover .sub-menu,
+.sidebarToggle.business:hover .sub-menu,
+.sidebarToggle.Request:hover .sub-menu,
+.sidebarToggle.report:hover .sub-menu {
+  display: flex;
 }

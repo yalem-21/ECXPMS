@@ -1,65 +1,132 @@
-<p style="text-align: center;font-weight: bold;">ECXPMS Menu</p>
-<mat-divider></mat-divider>
-<div style="display: flex;flex-direction: column;height: 100vh; overflow-y: auto;  scrollbar-width: thin;
-scrollbar-color: hsl(220 13% 91%) hsl(220 13% 171%);">
-    <mat-accordion style="background-color: white;border: none;padding-bottom: 150px;">
-        <div>
-            <button class="sidebarButton" style="background-color: #18552c;color: white;">
-                <mat-icon>space_dashboard</mat-icon>
-                Dashboared
-            </button>
+<div *ngIf="sidebarToggle ; else sidebarClosed">
+    <p style="text-align: center;font-weight: bold;" *ngIf="sidebarToggle">ECXPMS Menu</p>
+    <mat-divider></mat-divider>
+    <div style="display: flex;flex-direction: column;height: 100vh; overflow-y: auto;  scrollbar-width: thin;
+    scrollbar-color: hsl(220 13% 91%) hsl(220 13% 171%);" [ngStyle]="{'margin-top':sidebarToggle?'10px':'46px'}">
+        <mat-accordion style="background-color: white;border: none;padding-bottom: 150px;">
+            <div>
+                <button class="sidebarButton" style="background-color: #18552c;color: white;">
+                    <mat-icon>space_dashboard</mat-icon>
+                    Dashboared
+                </button>
 
-        </div>
-        <mat-expansion-panel style="background-color: white;">
-            <mat-expansion-panel-header>
-                <mat-panel-description><mat-icon>folder</mat-icon> Master Data </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div *ngFor="let master of masterData" style="display: flex;flex-direction: column;">
-                <button class="sidebarButtonSubcatagory">{{master}}</button>
             </div>
-        </mat-expansion-panel>
-        <mat-expansion-panel style="background-color: white;">
-            <mat-expansion-panel-header>
-                <mat-panel-description>
-                    <mat-icon>business</mat-icon> Property Management
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div *ngFor="let propertyManagments of propertyManagment" style="display: flex;flex-direction: column;">
-                <button class="sidebarButtonSubcatagory">{{propertyManagments}}</button>
+            <mat-expansion-panel style="background-color: white;">
+                <mat-expansion-panel-header>
+                    <mat-panel-description><mat-icon>folder</mat-icon> Master Data </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div *ngFor="let master of masterData" style="display: flex;flex-direction: column;">
+                    <button
+                        class="sidebarButtonSubcatagory"><mat-icon>{{master.icon}}</mat-icon>{{master.label}}</button>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel style="background-color: white;">
+                <mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <mat-icon>business</mat-icon> Property Management
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div *ngFor="let propertyManagments of propertyManagment" style="display: flex;flex-direction: column;">
+                    <button
+                        class="sidebarButtonSubcatagory"><mat-icon>{{propertyManagments.icon}}</mat-icon>{{propertyManagments.label}}</button>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel style="background-color: white;">
+                <mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <mat-icon>pending_actions</mat-icon> Request
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div *ngFor="let Requests of Request" style="display: flex;flex-direction: column;width: 100%;">
+                    <button
+                        class="sidebarButtonSubcatagory"><mat-icon>{{Requests.icon}}</mat-icon>{{Requests.label}}</button>
+                </div>
+            </mat-expansion-panel>
+            <div> <Button class="sidebarButton"><mat-icon>fact_check</mat-icon> Inspection</Button></div>
+            <div> <button class="sidebarButton"><mat-icon>sync_alt</mat-icon> Transfer</button></div>
+            <div><button class="sidebarButton"><mat-icon>recycling</mat-icon> Disposal</button></div>
+            <mat-expansion-panel style="background-color: white;">
+                <mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <mat-icon>report</mat-icon> Report
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div *ngFor="let Reports of Report" style="display: flex;flex-direction: column;">
+                    <button
+                        class="sidebarButtonSubcatagory"><mat-icon>{{Reports.icon}}</mat-icon>{{Reports.label}}</button>
+                </div>
+            </mat-expansion-panel>
+            <div>
+                <button class="sidebarButton"><mat-icon>person</mat-icon>User</button>
             </div>
-        </mat-expansion-panel>
-        <mat-expansion-panel style="background-color: white;">
-            <mat-expansion-panel-header>
-                <mat-panel-description>
-                    <mat-icon>pending_actions</mat-icon> Request
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div *ngFor="let Requests of Request" style="display: flex;flex-direction: column;width: 100%;">
-                <button class="sidebarButtonSubcatagory">{{Requests}}</button>
+            <div>
+                <button class="sidebarButton"><mat-icon>settings</mat-icon>Setting</button>
             </div>
-        </mat-expansion-panel>
-        <div> <Button class="sidebarButton"><mat-icon>fact_check</mat-icon> Inspection</Button></div>
-        <div> <button class="sidebarButton"><mat-icon>sync_alt</mat-icon> Transfer</button></div>
-        <div><button class="sidebarButton"><mat-icon>recycling</mat-icon> Disposal</button></div>
-        <mat-expansion-panel style="background-color: white;">
-            <mat-expansion-panel-header>
-                <mat-panel-description>
-                    <mat-icon>report</mat-icon> Report
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div *ngFor="let Reports of Report" style="display: flex;flex-direction: column;">
-                <button class="sidebarButtonSubcatagory">{{Reports}}</button>
+            <div>
+                <button class="sidebarButton"><mat-icon>help</mat-icon>Help</button>
             </div>
-        </mat-expansion-panel>
-        <div>
-            <button class="sidebarButton"><mat-icon>person</mat-icon>User</button>
-        </div>
-        <div>
-            <button class="sidebarButton"><mat-icon>settings</mat-icon>Setting</button>
-        </div>
-        <div>
-            <button class="sidebarButton"><mat-icon>help</mat-icon>Help</button>
-        </div>
-    </mat-accordion>
-
+        </mat-accordion>
+    </div>
 </div>
+<ng-template #sidebarClosed>
+    <div style="display: flex;flex-direction: column;height: 100vh; overflow-y: auto;  scrollbar-width: thin;
+    scrollbar-color: hsl(220 13% 91%) hsl(220 13% 171%);" [ngStyle]="{'margin-top':sidebarToggle?'10px':'46px'}">
+        <mat-divider></mat-divider>
+        <div>
+
+            <div class="sidebarToggle">
+                <button title="Dashboard"><mat-icon>space_dashboard</mat-icon></button>
+            </div>
+            <div class="sidebarToggle master">
+                <button><mat-icon>folder</mat-icon></button>
+                <div class="sub-menu">
+                    <button *ngFor="let master of masterData" class="sidebarButtonSubcatagory">
+                        <mat-icon>{{ master.icon }}</mat-icon>{{ master.label }}
+                    </button>
+                </div>
+            </div>
+            <div class="sidebarToggle business">
+                <button><mat-icon>business</mat-icon></button>
+                <div class="sub-menu">
+                    <button *ngFor="let propertyManagments of propertyManagment" class="sidebarButtonSubcatagory">
+                        <mat-icon>{{ propertyManagments.icon }}</mat-icon>{{ propertyManagments.label }}
+                    </button>
+                </div>
+            </div>
+            <div class="sidebarToggle Request">
+                <button> <mat-icon>pending_actions</mat-icon> </button>
+                <div class="sub-menu">
+                    <button title="Request" *ngFor="let Requests of Request" class="sidebarButtonSubcatagory">
+                        <mat-icon>{{ Requests.icon }}</mat-icon>{{ Requests.label }}
+                    </button>
+                </div>
+            </div>
+            <div class="sidebarToggle Inspection">
+                <button title="Inspection"><mat-icon>fact_check</mat-icon></button>
+            </div>
+            <div class="sidebarToggle">
+                <button title="Transfer"><mat-icon>sync_alt</mat-icon></button>
+            </div>
+            <div class="sidebarToggle">
+                <button title="Disposal"><mat-icon>recycling</mat-icon> </button>
+            </div>
+            <div class="sidebarToggle report">
+                <button><mat-icon>report</mat-icon></button>
+                <div class="sub-menu">
+                    <button title="report" *ngFor="let Reports of Report" class="sidebarButtonSubcatagory">
+                        <mat-icon>{{ Reports.icon }}</mat-icon>{{ Reports.label }}
+                    </button>
+                </div>
+            </div>
+            <div class="sidebarToggle">
+                <button title="user"><mat-icon>person</mat-icon></button>
+            </div>
+            <div class="sidebarToggle">
+                <button title="settings"><mat-icon>settings</mat-icon></button>
+            </div>
+            <div class="sidebarToggle">
+                <button title="help"><mat-icon>help</mat-icon></button>
+            </div>
+        </div>
+    </div>
+</ng-template>

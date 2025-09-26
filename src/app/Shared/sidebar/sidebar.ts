@@ -21,15 +21,29 @@ import { MatExpansionModule } from '@angular/material/expansion';
 export class Sidebar {
   readonly panelOpenState = signal(false);
   @Input() selectedModule: string = '';
+  @Input() sidebarToggle: boolean = true;
   @Output() toggleSidebar = new EventEmitter<void>();
-tabMeny: string[]=['Master Data ', 'Property Management', 'Requests', 'Inspection','Transfer','Disposal','Report','User','Setting','help']
+  //  sidebarToggle: boolean = true;  // Controls overall sidebar collapse
+  expandedMenu: string | null = null; 
 
-masterData:string[]=['Property Type',' Catagory','Location','Safty Box'];
-propertyManagment:string[]=['Property Registration','Property Recieving','Property Issueing','Property Return'];
-Request:string[]=['Purchase Request', 'Store Requesition'];
-Report:string[]=['Property report', 'Financial Report', 'Compliance Report'];
 
-  
+
+  masterData: any[] = [{ label: 'Property Type', icon: 'circle' },
+  { label: 'Category', icon: 'circle' },
+  { label: 'Location', icon: 'circle' },
+  { label: 'Safety Box', icon: 'circle' }];
+  propertyManagment: any[] = [{ label: 'Property Registration', icon: 'circle' },
+  { label: 'Property Receiving', icon: 'circle' },
+  { label: 'Property Issuing', icon: 'circle' },
+  { label: 'Property Return', icon: 'circle' }];
+  Request: any[] = [{ label: 'Purchase Request', icon: 'circle' },
+  { label: 'Store Requisition', icon: 'circle' }];
+  Report: any[] = [{ label: 'Property Report', icon: 'circle' },
+  { label: 'Financial Report', icon: 'circle' },
+  { label: 'Compliance Report', icon: 'circle' }];
+  toggleMenu(menuLabel: string) {
+    this.expandedMenu = this.expandedMenu === menuLabel ? null : menuLabel;
+  }
   get subModules(): string[] {
     if (this.selectedModule === 'Service') {
       return ['Requisition', 'History'];
@@ -54,4 +68,5 @@ Report:string[]=['Property report', 'Financial Report', 'Compliance Report'];
     this.router.navigate([path]);
     this.toggleSidebar.emit();
   }
+
 }

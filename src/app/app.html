@@ -1,9 +1,13 @@
 <app-navbar></app-navbar>
-<div style="display: flex;flex-direction: row;">
-    <div style="width: 21%;border:1px solid hsl(220 13% 91%);background-color: white;margin-top: 70px;position: fixed;left:0;">
-        <app-sidebar></app-sidebar>
+<div class="content" style="display: flex;flex-direction: row;">
+    <div class="appsidebar" [ngStyle]="{'width': sidebarToggle ? '21%' : '3%', 'transition':'width 0.1s'}">
+        <app-sidebar [sidebarToggle]="sidebarToggle"></app-sidebar>
+        <div class="toggle" [ngStyle]="{'top':sidebarToggle?'6px':'1px'}">
+            <button [ngStyle]="{' padding':sidebarToggle?'7px':'0px', 'transition':'padding 0.3s'}" (click)="sidebarToggled()"><mat-icon>{{SidebarToggleIcon}}</mat-icon></button>
+        </div>
     </div>
-    <div style="border: hsl(220 13% 91%);margin-top: 70px; background-color:white;width: 100%;padding-left: 25px;margin-left: 21%;">
-    <router-outlet></router-outlet>
+    <div [ngStyle]="{'margin-left': sidebarToggle ? '21%' : '3%' , 'transition':'margin-left 0.3s'}"
+        style="border: hsl(220 13% 91%);margin-top: 70px; background-color:white;width: 100%;padding-left: 25px;margin-left: 21%;">
+        <router-outlet></router-outlet>
     </div>
 </div>
