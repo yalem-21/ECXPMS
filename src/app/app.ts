@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal,HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './Shared/navbar/navbar';
 import { Sidebar } from './Shared/sidebar/sidebar';
@@ -30,6 +30,8 @@ export class App {
   selectedModule: string = '';
   sidebarToggle:boolean=true;
   SidebarToggleIcon:string='chevron_left';
+    screenWidth:number=0;
+  isMobile:boolean=false;
   onModuleSelected(module: string, sidenav: MatSidenav): void {
     this.selectedModule = module;
     sidenav.open();
@@ -42,6 +44,16 @@ export class App {
     }
     else{
       this.SidebarToggleIcon='chevron_left';
+    }
+  }
+
+   @HostListener('window:resize', ['$event'])
+  handleWindowResize(event: UIEvent): void {
+    this.screenWidth=window.innerWidth;
+    if(this.screenWidth<800){
+this.isMobile=true;
+    }else{
+      this.isMobile=false;
     }
   }
 }

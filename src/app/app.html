@@ -1,9 +1,10 @@
-<app-navbar></app-navbar>
+<app-navbar [screenWidth]="screenWidth"></app-navbar>
 <div class="content" style="display: flex;flex-direction: row;">
     <div class="appsidebar" [ngStyle]="{'width': sidebarToggle ? '21%' : '3%', 'transition':'width 0.1s'}">
-        <app-sidebar  [sidebarToggle]="sidebarToggle"></app-sidebar>
+        <app-sidebar  [sidebarToggle]="sidebarToggle"
+          [screenWidth]="screenWidth"></app-sidebar>
         <div class="toggle" [ngStyle]="{'top':sidebarToggle?'6px':'1px'}">
-            <button [ngStyle]="{' padding':sidebarToggle?'7px':'0px', 'transition':'padding 0.3s'}"
+            <button  [ngStyle]="{' padding':sidebarToggle?'7px':'0px', 'transition':'padding 0.3s'}"
                 (click)="sidebarToggled()"><mat-icon>{{SidebarToggleIcon}}</mat-icon></button>
         </div>
     </div>

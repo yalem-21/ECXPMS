@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, input, OnChanges, Output,SimpleChanges  } from '@angular/core';
 import { AuthService } from '../../service/auth-service';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -29,13 +29,18 @@ import { MatBadgeModule } from '@angular/material/badge';
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss'
 })
-export class Navbar {
+export class Navbar implements OnChanges{
+
+
   notificationCount=5;
   activMenu='true';
+  isMobile:boolean=false;
+@Input() screenWidth=0;
     @Output() moduleSelected = new EventEmitter<string>();
   modules = ['home','Service','Stock','Purchase'];
 
   constructor(private authService: AuthService) {}
+
 
   selectModule(module: string): void {
     this.moduleSelected.emit(module);
@@ -44,4 +49,15 @@ export class Navbar {
   logout(): void {
     this.authService.logout();
   }
+
+   ngOnChanges(changes: SimpleChanges): void {
+    if (changes['screenWidth']) {
+      if (this.screenWidth < 800) {
+        this.isMobile=true;
+      } else {
+          this.isMobile=false;
+      }
+    }
+  }
+
 }

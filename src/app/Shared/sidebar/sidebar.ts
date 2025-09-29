@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
+import { Component, EventEmitter, input, Input, Output, signal,SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
@@ -20,8 +20,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
 })
 export class Sidebar {
   readonly panelOpenState = signal(false);
+  isMobile:boolean=false;
   @Input() selectedModule: string = '';
   @Input() sidebarToggle: boolean = true;
+  @Input() screenWidth:number=0;
   @Output() toggleSidebar = new EventEmitter<void>();
   //  sidebarToggle: boolean = true;  // Controls overall sidebar collapse
   expandedMenu: string | null = null; 
@@ -68,5 +70,15 @@ export class Sidebar {
     this.router.navigate([path]);
     this.toggleSidebar.emit();
   }
-
+   ngOnChanges(changes: SimpleChanges): void {
+    if (changes['screenWidth']) {
+      if (this.screenWidth < 800) {
+        this.isMobile=true;
+        // this.sidebarToggle=false;
+      } else {
+          this.isMobile=false;
+        // this.sidebarToggle=true;
+      }
+    }
+  }
 }
