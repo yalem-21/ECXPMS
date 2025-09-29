@@ -151,6 +151,18 @@ mat-icon {
   padding: 14px 14px;
   overflow: visible !important;
 }
+.sub-menu::before {
+  content: '';
+  position: absolute;
+  top: 10px; 
+  left: -10px; 
+  width: 3px;
+  height: 0;
+  border-top: 10px solid transparent; 
+  border-bottom: 10px solid transparent; 
+  border-right: 10px solid #18552c; 
+  z-index: 10002;
+}
 .master:hover .sub-menu,
 .business:hover .sub-menu,
 .Request:hover .sub-menu,
