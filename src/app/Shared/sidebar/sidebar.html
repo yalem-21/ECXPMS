@@ -5,7 +5,7 @@
     scrollbar-color: hsl(220 13% 91%) hsl(220 13% 171%);" [ngStyle]="{'margin-top':sidebarToggle?'10px':'46px'}">
         <mat-accordion style="background-color: white;border: none;padding-bottom: 150px;">
             <div>
-                <button class="sidebarButton" style="background-color: #18552c;color: white;">
+                <button routerLink="/Dashboard" class="sidebarButton" style="background-color: #18552c;color: white;">
                     <mat-icon>space_dashboard</mat-icon>
                     Dashboared
                 </button>
@@ -73,7 +73,6 @@
     scrollbar-color: hsl(220 13% 91%) hsl(220 13% 171%);" [ngStyle]="{'margin-top':sidebarToggle?'10px':'46px'}">
         <mat-divider></mat-divider>
         <div>
-
             <div class="sidebarToggle">
                 <button title="Dashboard"><mat-icon>space_dashboard</mat-icon></button>
             </div>
@@ -81,7 +80,7 @@
                 <button><mat-icon>folder</mat-icon></button>
                 <div class="sub-menu">
                     <button *ngFor="let master of masterData" class="sidebarButtonSubcatagory">
-                        <mat-icon>{{ master.icon }}</mat-icon>{{ master.label }}
+                        {{ master.label }}
                     </button>
                 </div>
             </div>
@@ -89,7 +88,7 @@
                 <button><mat-icon>business</mat-icon></button>
                 <div class="sub-menu">
                     <button *ngFor="let propertyManagments of propertyManagment" class="sidebarButtonSubcatagory">
-                        <mat-icon>{{ propertyManagments.icon }}</mat-icon>{{ propertyManagments.label }}
+                        {{ propertyManagments.label }}
                     </button>
                 </div>
             </div>
@@ -97,7 +96,7 @@
                 <button> <mat-icon>pending_actions</mat-icon> </button>
                 <div class="sub-menu">
                     <button title="Request" *ngFor="let Requests of Request" class="sidebarButtonSubcatagory">
-                        <mat-icon>{{ Requests.icon }}</mat-icon>{{ Requests.label }}
+                        {{ Requests.label }}
                     </button>
                 </div>
             </div>
@@ -114,7 +113,7 @@
                 <button><mat-icon>report</mat-icon></button>
                 <div class="sub-menu">
                     <button title="report" *ngFor="let Reports of Report" class="sidebarButtonSubcatagory">
-                        <mat-icon>{{ Reports.icon }}</mat-icon>{{ Reports.label }}
+                        {{ Reports.label }}
                     </button>
                 </div>
             </div>

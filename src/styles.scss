@@ -22,8 +22,9 @@ body {
   // `dark` to enable the dark color theme, or to `light dark` to defer to the
   // user's system settings.
   color-scheme: light;
-  background-color:white;
-position: relative;
+  background-color:rgb(241, 245, 241);
+  position: relative;
+
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables. Learn more about these
   // variables at https://material.angular.dev/guide/system-variables
