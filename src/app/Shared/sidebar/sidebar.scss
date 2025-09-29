@@ -40,73 +40,77 @@ mat-list-item {
 
 div {
 
-    div {
-      .sidebarButton {
-        display: flex;
-        font-weight: 500;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        border: none;
-        color: hsl(222.2 84% 4.9%);
-        padding: 13px 30px 13px 24px;
-        font-weight: bold;
-        background-color: white;
-        width: 100%;
-        cursor: pointer;
-        font-size: 16px;
-        align-items: start;
+  div {
+    .sidebarButton {
+      display: flex;
+      font-weight: 500;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      border: none;
+      color: hsl(222.2 84% 4.9%);
+      padding: 13px 30px 13px 24px;
+      font-weight: bold;
+      background-color: white;
+      width: 100%;
+      cursor: pointer;
+      font-size: 16px;
+      align-items: start;
 
-      }
+    }
 
-      .sidebarButton:hover {
-        // background-color: hsl(220 13% 91%);
-        background-color: #18552c;;
-        width: 100%;
-        color: white;
-      }
+    .sidebarButton:hover {
+      // background-color: hsl(220 13% 91%);
+      background-color: #18552c;
+      ;
+      width: 100%;
+      color: white;
+    }
 
-      .sidebarButtonSubcatagory {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        border: none;
-        background-color: white;
-        padding: 13px 5px 13px 5px;
-        font-weight: bold;
-        color: hsl(215.4 16.3% 46.9%);
-        width: 100%;
-        cursor: pointer;
-        font-size: 14px;
-        align-items: center;
-        font-weight: bold;
-        position: relative;
-      }
+    .sidebarButtonSubcatagory {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      border: none;
+      background-color: white;
+      padding: 13px 5px 13px 5px;
+      font-weight: bold;
+      color: hsl(215.4 16.3% 46.9%);
+      width: 100%;
+      cursor: pointer;
+      font-size: 14px;
+      align-items: center;
+      font-weight: bold;
+      position: relative;
+      z-index: 5000;
+    }
 
-      .sidebarButtonSubcatagory:hover {
-        background-color: #18552c;
-        color: white;
-        width: 100%;
-      }
+    .sidebarButtonSubcatagory:hover {
+      background-color: #18552c;
+      color: white;
+      width: 100%;
+      border-radius: 10px;
     }
   }
+}
 
-  mat-icon {
-    margin-right: 6px;
+mat-icon {
+  margin-right: 6px;
 
-  }
-
+}
 
 mat-icon {
   font-size: 13px;
 }
 
 .sidebarToggle {
-display: flex;
-flex-direction: column;
-justify-content: start;
-margin-top: 10px;
-width: 21%;      
- overflow: visible !important; 
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-top: 10px;
+  width: 100%;
+  position: relative;
+  overflow: visible !important;
+
 
   button {
     border: none;
@@ -124,32 +128,37 @@ width: 21%;
   }
 }
 
-
 .master,
 .business,
 .Request,
 .report {
   position: relative;
 }
+
 .sub-menu {
   display: none;
   position: absolute;
   top: 0;
-  left: 100%;       
-  background-color: hwb(120 95% 4%);
+  left: 100%; 
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
   flex-direction: column;
-  width: 2000px;
+  width: auto;  
   min-width: max-content;
-  z-index: 4100;  
-  visibility: visible !important;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 2px;  
+  padding: 14px 14px;
+  overflow: visible !important;
+}
+.master:hover .sub-menu,
+.business:hover .sub-menu,
+.Request:hover .sub-menu,
+.report:hover .sub-menu {
+  display: flex;
+}
 
-}
- .master:hover .sub-menu,
- .business:hover .sub-menu,
- .Request:hover .sub-menu,
- .report:hover .sub-menu {
-  display: none;
-}
 mat-expansion-panel-header mat-panel-description {
   font-weight: bold;
 }
+

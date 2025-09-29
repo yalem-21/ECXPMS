@@ -69,13 +69,14 @@
     </div>
 </div>
 <ng-template #sidebarClosed>
-    <div style="display: flex;flex-direction: column;height: 100vh; overflow-y: auto;  scrollbar-width: thin;
+    <div style="display: flex;flex-direction: column;height: 100vh; overflow-y: auto;  scrollbar-width: thin;overflow: visible;
     scrollbar-color: hsl(220 13% 91%) hsl(220 13% 171%);" [ngStyle]="{'margin-top':sidebarToggle?'10px':'46px'}">
         <mat-divider></mat-divider>
         <div>
-            <div class="sidebarToggle">
+            <div class="sidebarToggle Dashboard">
                 <button title="Dashboard"><mat-icon>space_dashboard</mat-icon></button>
             </div>
+          
             <div class="sidebarToggle master">
                 <button><mat-icon>folder</mat-icon></button>
                 <div class="sub-menu">

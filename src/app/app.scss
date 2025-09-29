@@ -40,11 +40,14 @@
 }
 
 .appsidebar {
-     width: 21%;
-    border: 1px solid hsl(220 13% 91%);
-    background-color: white;
-    margin-top: 70px;
-    position: fixed;
-    left: 0;
-    overflow: visible; 
+  width: auto;
+  border: 1px solid hsl(220 13% 91%);
+  background-color: white;
+  margin-top: 70px;
+  position: fixed;      
+  left: 0;
+  top: 0;               
+  bottom: 0;        
+  overflow: visible !important; 
+  z-index: 3000;
 }
