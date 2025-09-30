@@ -1,4 +1,4 @@
-import { Component, EventEmitter, input, Input, Output, signal,SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, Output, signal,SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
@@ -31,18 +31,18 @@ export class Sidebar {
 
 
   masterData: any[] = [{ label: 'Property Type', icon: 'circle' },
-  { label: 'Category', icon: 'circle' },
-  { label: 'Location', icon: 'circle' },
-  { label: 'Safety Box', icon: 'circle' }];
-  propertyManagment: any[] = [{ label: 'Property Registration', icon: 'circle' },
-  { label: 'Property Receiving', icon: 'circle' },
-  { label: 'Property Issuing', icon: 'circle' },
-  { label: 'Property Return', icon: 'circle' }];
-  Request: any[] = [{ label: 'Purchase Request', icon: 'circle' },
-  { label: 'Store Requisition', icon: 'circle' }];
-  Report: any[] = [{ label: 'Property Report', icon: 'circle' },
-  { label: 'Financial Report', icon: 'circle' },
-  { label: 'Compliance Report', icon: 'circle' }];
+  { label: 'Category', icon: 'circle',link:'catagory' },
+  { label: 'Location', icon: 'circle',link:'location' },
+  { label: 'Safety Box', icon: 'circle',link:'shade' }];
+  propertyManagment: any[] = [{ label: 'Property Registration', icon: 'circle',link:'propertyRegistration' },
+  { label: 'Property Receiving', icon: 'circle',link:'propertyReceiving' },
+  { label: 'Property Issuing', icon: 'circle',link:'propertyIssuing' },
+  { label: 'Property Return', icon: 'circle',link:'propertyReturn' }];
+  Request: any[] = [{ label: 'Purchase Request', icon: 'circle',link:'purchaseRequest' },
+  { label: 'Store Requisition', icon: 'circle',link:'requisition' }];
+  Report: any[] = [{ label: 'Property Report', icon: 'circle',link:'propertyReport' },
+  { label: 'Financial Report', icon: 'circle',link:'financialReport' },
+  { label: 'Compliance Report', icon: 'circle',link:'complianceReport' }];
   toggleMenu(menuLabel: string) {
     this.expandedMenu = this.expandedMenu === menuLabel ? null : menuLabel;
   }
@@ -74,10 +74,8 @@ export class Sidebar {
     if (changes['screenWidth']) {
       if (this.screenWidth < 800) {
         this.isMobile=true;
-        // this.sidebarToggle=false;
       } else {
           this.isMobile=false;
-        // this.sidebarToggle=true;
       }
     }
   }
